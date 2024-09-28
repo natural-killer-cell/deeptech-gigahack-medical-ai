@@ -118,6 +118,46 @@
             font-weight: 500;
         }
 
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup-content h3 {
+            margin-bottom: 20px;
+        }
+
+        .popup-content p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 
@@ -240,18 +280,63 @@
 
         <div class="card" style="margin-top: 50px; margin-bottom: 20px;">
             <h3 class="mb-4">Upload Image</h3>
-            <div class="upload-area">
-                <p style="font-weight: 400;">Choose From File or Drag And Drop</p>
-                <input type="file" class="form-control" />
-            </div>
-            <div class="row justify-content-end mt-4">
-                <div class="col-1" style="margin-right: 30px;">
-                    <button class="btn btn-login" type="submit" style="border-color: #000; border-radius: 30px;">
-                        Analyze
-                    </button>
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <div class="upload-area">
+                    <p style="font-weight: 400;">Choose From File or Drag And Drop</p>
+                    <input type="file" name="file" id="fileInput" class="form-control" />
                 </div>
+                <div class="row justify-content-end mt-4">
+                    <div class="col-1" style="margin-right: 30px;">
+                        <button class="btn btn-login" type="submit" style="border-color: #000; border-radius: 30px;">
+                            Analyze
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Popup structure -->
+        <div id="popup" class="popup-overlay">
+            <div class="popup-content">
+                <h3>Analysis Result</h3>
+                <p id="normaResult">Norma: </p>
+                <p id="patologieResult">Patologie: </p>
+                <button class="close-btn" onclick="closePopup()">Close</button>
             </div>
         </div>
+
+        <script>
+            // Handle form submission
+            document.getElementById('uploadForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                
+                var fileInput = document.getElementById('fileInput');
+                var formData = new FormData();
+                formData.append('file', fileInput.files[0]);
+        
+                fetch('http://127.0.0.1:5000/predict', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Update popup content with the server response
+                    document.getElementById('normaResult').textContent = `Norma: ${data.Norma}`;
+                    document.getElementById('patologieResult').textContent = `Patologie: ${data.Patologie}`;
+                    
+                    // Show the popup
+                    document.getElementById('popup').style.display = 'flex';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        
+            // Function to close the popup
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+        </script>
     </div>
 
     <script>
