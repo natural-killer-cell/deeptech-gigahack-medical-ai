@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Imaging Made Easy</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5;
+            font-family: Inter;
+            font-weight: 500;
+            line-height: 24.2px;
+            letter-spacing: -0.04em;
+            text-align: left;
         }
 
         .main-container {
@@ -135,21 +138,25 @@
 
 <!-- Main Content -->
 <div class="main-container container">
-    <h1>
-        <span class="highlight"></span>✨ MEDICAL IM<span class="highlight">AI</span>GING 
-        <br>MADE <span class="icon">💜</span> EASY 
+    <h1 class="text-start">
+        <img src="images/stars.svg" style="width: 45px;" alt="Star"> MEDICAL IM<span class="highlight">AI</span>GING 
+        <br>MADE <span class="mr-4"></span> <img src="images/balloon-heart.svg" style="width: 60px;" alt="Star"> EASY 
         <br>FOR {YOU}
     </h1>
 
-    <div class="button-group">
-        <a href="#" class="btn btn-custom btn-contact">Contact Us</a>
-        <a href="forma.html" class="btn btn-custom btn-demo">Request A Demo</a>
+    <div class="button-group mb-5">
+        <a href="#" class="btn btn-custom btn-contact" style="color: #000;">Contact Us</a>
+        <a href="forma.html" class="btn btn-custom btn-link border-0" style="color: #000;">Request A Demo</a>
     </div>
 
-    <p class="footer-text">
-        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took.
-    </p>
+   <div class="row justify-content-center mt-5">
+        <div class="col-6">
+            <p class="footer-text">
+                Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took.
+            </p>
+        </div>
+   </div>
 </div>
 
 <!-- Bootstrap JS (Optional) -->
