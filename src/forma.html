@@ -70,6 +70,10 @@
             display: flex;
             align-items: center;
         }
+
+        .technique-radio:checked + .technique-button {
+            background-color: #424141;
+        }
     </style>
 </head>
 <body>
@@ -91,12 +95,19 @@
     <div class="container-box">
         <h2>Select Imagistic Technique:</h2>
         <div class="d-flex justify-content-around">
-            <button class="technique-button">Ecography</button>
-            <button class="technique-button">X-Ray</button>
-            <button class="technique-button">CT</button>
-            <button class="technique-button">MRI</button>
+            <input type="radio" id="ecography" name="technique" value="ecography" class="technique-radio" hidden>
+            <label for="ecography" class="technique-button">Ecography</label>
+            
+            <input type="radio" id="xray" name="technique" value="xray" class="technique-radio" hidden>
+            <label for="xray" class="technique-button">X-Ray</label>
+            
+            <input type="radio" id="ct" name="technique" value="ct" class="technique-radio" hidden>
+            <label for="ct" class="technique-button">CT</label>
+            
+            <input type="radio" id="mri" name="technique" value="mri" class="technique-radio" hidden>
+            <label for="mri" class="technique-button">MRI</label>
         </div>
-    </div>
+    </div>       
 
     <!-- Anatomic Region Section -->
     <div class="container-box">
