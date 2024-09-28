@@ -40,11 +40,12 @@
         .card {
             background-color: #f3e8ff;
             left: 63px;
-            padding: 60px 0px 0px 0px;
+            padding: 60px;
             gap: 10px;
             border-radius: 30px;
             border: 1px 0px 0px 0px;
             opacity: 0px;
+            border-color: #000;
         }
 
         .btn-custom {
@@ -59,14 +60,17 @@
 
         .upload-area {
             background-color: white;
-            border: 2px dashed #d7bfff;
             padding: 30px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 30px;
         }
 
         .upload-area p {
             color: gray;
+        }
+
+        .upload-area input {
+            border-radius: 30px;
         }
 
         .rounded-pill {
@@ -119,7 +123,7 @@
     </nav>
 
     <div class="container mt-4">
-        <div class="card p-4 mt-3">
+        <div class="card mt-3">
             <h3>Select Imagistic Technique:</h3>
             <div class="d-flex justify-content-around my-4">
                 <button class="btn btn-custom">Ecography</button>
@@ -129,13 +133,13 @@
             </div>
         </div>
 
-        <div class="card p-4 mt-3">
+        <div class="card mt-3">
             <h3>Select Type And Anatomic Region:</h3>
             <div class="row">
                 <div class="col-md-6">
                     <h4 class="mt-4 mb-3">Musculoskeletal</h4>
                     <strong>Soft Tissue</strong><br>
-                    <div class="col-12">
+                    <div class="col-12 mt-2">
                         <button class="btn btn-outline-secondary btn-sm">Salivary Glands</button>
                         <button class="btn btn-outline-secondary btn-sm">Fat Tissue</button>
                         <button class="btn btn-outline-secondary btn-sm">Muscle Tissue</button>
@@ -145,56 +149,64 @@
 
                     <div class="mb-2 mt-3">
                         <strong>Joints</strong><br>
-                        <button class="btn btn-outline-secondary btn-sm">Temporo-Mandibular Joint</button>
-                        <button class="btn btn-outline-secondary btn-sm">Shoulder</button>
-                        <button class="btn btn-outline-secondary btn-sm">Elbow</button>
-                        <button class="btn btn-outline-secondary btn-sm">Wrist</button>
-                        <button class="btn btn-outline-secondary btn-sm">Hand/Fingers</button>
-                        <button class="btn btn-outline-secondary btn-sm">Hip</button>
-                        <button class="btn btn-outline-secondary btn-sm">Knee</button>
-                        <button class="btn btn-outline-secondary btn-sm">Ankle</button>
-                        <button class="btn btn-outline-secondary btn-sm">Leg/Fingers</button>
+                        <div class="mt-2">
+                            <button class="btn btn-outline-secondary btn-sm">Temporo-Mandibular Joint</button>
+                            <button class="btn btn-outline-secondary btn-sm">Shoulder</button>
+                            <button class="btn btn-outline-secondary btn-sm">Elbow</button>
+                            <button class="btn btn-outline-secondary btn-sm">Wrist</button>
+                            <button class="btn btn-outline-secondary btn-sm">Hand/Fingers</button>
+                            <button class="btn btn-outline-secondary btn-sm">Leg/Fingers</button>
+                            <button class="btn btn-outline-secondary btn-sm">Knee</button>
+                            <button class="btn btn-outline-secondary btn-sm">Hip</button>
+                            <button class="btn btn-outline-secondary btn-sm">Ankle</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h4 class="mt-4 mb-3">Internal Organs</h4>
                     <div class="mb-2">
                         <strong>Neck & Chest</strong><br>
-                        <button class="btn btn-outline-secondary btn-sm">Thyroid Gland</button>
-                        <button class="btn btn-outline-secondary btn-sm">Lungs</button>
-                        <button class="btn btn-outline-secondary btn-sm">Heart</button>
-                        <button class="btn btn-outline-secondary btn-sm">Mammary Glands</button>
-                        <button class="btn btn-outline-secondary btn-sm">Thymus</button>
+                        <div class="mt-2">
+                            <button class="btn btn-outline-secondary btn-sm">Thyroid Gland</button>
+                            <button class="btn btn-outline-secondary btn-sm">Lungs</button>
+                            <button class="btn btn-outline-secondary btn-sm">Heart</button>
+                            <button class="btn btn-outline-secondary btn-sm">Mammary Glands</button>
+                            <button class="btn btn-outline-secondary btn-sm">Thymus</button>
+                        </div>
                     </div>
 
                     <div class="mb-2 mt-3">
                         <strong>Abdomen</strong><br>
-                        <button class="btn btn-outline-secondary btn-sm">Liver</button>
-                        <button class="btn btn-outline-secondary btn-sm">Spleen</button>
-                        <button class="btn btn-outline-secondary btn-sm">Kidney</button>
-                        <button class="btn btn-outline-secondary btn-sm">Gallbladder</button>
-                        <button class="btn btn-outline-secondary btn-sm">Pancreas</button>
-                        <button class="btn btn-outline-secondary btn-sm">Stomach</button>
+                        <div class="mt-2">
+                            <button class="btn btn-outline-secondary btn-sm">Liver</button>
+                            <button class="btn btn-outline-secondary btn-sm">Spleen</button>
+                            <button class="btn btn-outline-secondary btn-sm">Kidney</button>
+                            <button class="btn btn-outline-secondary btn-sm">Gallbladder</button>
+                            <button class="btn btn-outline-secondary btn-sm">Pancreas</button>
+                            <button class="btn btn-outline-secondary btn-sm">Stomach</button>
+                        </div>
                     </div>
 
                     <div class="mb-2 mt-3">
                         <strong>Pelvis</strong><br>
-                        <button class="btn btn-outline-secondary btn-sm">Prostate</button>
-                        <button class="btn btn-outline-secondary btn-sm">Urinary Bladder</button>
-                        <button class="btn btn-outline-secondary btn-sm">Vascular Glands</button>
-                        <button class="btn btn-outline-secondary btn-sm">Urethra</button>
-                        <button class="btn btn-outline-secondary btn-sm">Fallopian Tubes</button>
-                        <button class="btn btn-outline-secondary btn-sm">Ovaries</button>
-                        <button class="btn btn-outline-secondary btn-sm">Testis</button>
+                        <div class="mt-2">
+                            <button class="btn btn-outline-secondary btn-sm">Prostate</button>
+                            <button class="btn btn-outline-secondary btn-sm">Urinary Bladder</button>
+                            <button class="btn btn-outline-secondary btn-sm">Vascular Glands</button>
+                            <button class="btn btn-outline-secondary btn-sm">Urethra</button>
+                            <button class="btn btn-outline-secondary btn-sm">Fallopian Tubes</button>
+                            <button class="btn btn-outline-secondary btn-sm">Ovaries</button>
+                            <button class="btn btn-outline-secondary btn-sm">Testis</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card p-4 mt-3">
-            <h3>Upload Image</h3>
+        <div class="card mt-3">
+            <h3 class="mb-4">Upload Image</h3>
             <div class="upload-area">
-                <p>Choose From File or Drag And Drop</p>
+                <p style="font-weight: 400;">Choose From File or Drag And Drop</p>
                 <input type="file" class="form-control" />
             </div>
         </div>
