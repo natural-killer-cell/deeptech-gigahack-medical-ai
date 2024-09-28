@@ -33,9 +33,18 @@ def predict():
     predictions = model.predict(img_array)
     score = predictions[0][0]
 
+    predicted_class = np.argmax(predictions, axis=1)[0]  # Получаем индекс класса с максимальной вероятностью
+
+    if predicted_class == 0:
+        class_name = "Norma"
+        confidence = predictions[0][0]
+    else:
+        class_name = "Patologie"
+        confidence = predictions[0][1]
+
     result = {
-        "Patologie": f"{(100 * (1 - score)):.2f}%",
-        "Norma": f"{(100 * score):.2f}%"
+        "predicted_class": class_name,
+        "confidence": f"{(100 * confidence):.2f}%"
     }
 
     return jsonify(result)
