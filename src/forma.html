@@ -279,20 +279,29 @@
         </div>
 
         <div class="card" style="margin-top: 50px; margin-bottom: 20px;">
-            <h3 class="mb-4">Upload Image</h3>
-            <form id="uploadForm" method="POST" enctype="multipart/form-data">
-                <div class="upload-area">
-                    <p style="font-weight: 400;">Choose From File or Drag And Drop</p>
-                    <input type="file" name="file" id="fileInput" class="form-control" />
+            <div class="row">
+                <div class="col">
+                    <h3 class="mb-4">Upload Image</h3>
                 </div>
-                <div class="row justify-content-end mt-4">
-                    <div class="col-1" style="margin-right: 30px;">
-                        <button class="btn btn-login" type="submit" style="border-color: #000; border-radius: 30px;">
-                            Analyze
-                        </button>
-                    </div>
+                <div class="col"></div>
+                    <img id="infoIcon" src="images/question-circle 1.svg" style="width: 50px; position: relative; top:-10px" alt="logo">
                 </div>
-            </form>
+                <div class="col">
+                    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                        <div class="upload-area">
+                            <p style="font-weight: 400;">Choose From File or Drag And Drop</p>
+                            <input type="file" name="file" id="fileInput" class="form-control" />
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                            <div class="col-1" style="margin-right: 30px;">
+                                <button class="btn btn-login" type="submit" style="border-color: #000; border-radius: 30px;">
+                                    Analyze
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
         
         <!-- Popup structure -->
@@ -302,6 +311,14 @@
                 <p id="normaResult">Norma: </p>
                 <p id="patologieResult">Patologie: </p>
                 <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+         <!-- Popup question structure -->
+         <div id="popup-question" class="popup-overlay">
+            <div class="popup-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam optio ipsa ea corporis explicabo non rerum reiciendis vel voluptatibus.</p>
+                <button class="close-btn" onclick="closePopupQuestion()">Close</button>
             </div>
         </div>
 
@@ -321,8 +338,8 @@
                 .then(response => response.json())
                 .then(data => {
                     // Update popup content with the server response
-                    document.getElementById('normaResult').textContent = `Norma: ${data.Norma}`;
-                    document.getElementById('patologieResult').textContent = `Patologie: ${data.Patologie}`;
+                    document.getElementById('normaResult').textContent = `Normal: ${data.Norma}`;
+                    document.getElementById('patologieResult').textContent = `Trauma: ${data.Patologie}`;
                     
                     // Show the popup
                     document.getElementById('popup').style.display = 'flex';
@@ -336,6 +353,16 @@
             function closePopup() {
                 document.getElementById('popup').style.display = 'none';
             }
+
+            function closePopupQuestion() {
+                document.getElementById('popup-question').style.display = 'none';
+            }
+
+            function showPopupQuestion() {
+                document.getElementById('popup-question').style.display = 'flex';
+            }
+
+            document.getElementById('infoIcon').addEventListener('click', showPopupQuestion);
         </script>
     </div>
 
