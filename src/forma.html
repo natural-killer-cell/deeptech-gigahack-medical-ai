@@ -100,7 +100,12 @@
 
         .btn-custom {
             border-radius: 30px;
-            margin: 3px;
+            padding: 30px;
+            width: 285px;
+            height: 200px;
+            margin: 15px;
+            font-size: 30px;
+            font-weight: 500;
         }
 
         h3 {
@@ -126,14 +131,38 @@
         <div class="card mt-3">
             <h3>Select Imagistic Technique:</h3>
             <div class="d-flex justify-content-around my-4">
-                <button class="btn btn-custom">Ecography</button>
-                <button class="btn btn-custom">X-Ray</button>
-                <button class="btn btn-custom">CT</button>
-                <button class="btn btn-custom">MRI</button>
+                <button class="btn btn-custom">
+                    <p>
+                        <img src="images/ecography.svg" style="width: 100px;" alt="logo">
+                        <br>
+                        Ecography
+                    </p>
+                </button>
+                <button class="btn btn-custom">
+                   <p>
+                    <img src="images/xray.svg" style="width: 100px;" alt="logo">
+                    <br>
+                    X-Ray
+                   </p>
+                </button>
+                <button class="btn btn-custom">
+                    <p style="position: relative; top: -20px">
+                        <img src="images/ct.svg" style="width: 130px;" alt="logo">
+                        <br>
+                        <span style="position:relative; top: -10px;"> CT</span>
+                    </p>
+                </button>
+                <button class="btn btn-custom">
+                    <p>
+                        <img src="images/mri.svg" style="width: 100px;" alt="logo">
+                        <br>
+                        MRI
+                    </p>
+                </button>
             </div>
         </div>
 
-        <div class="card mt-3">
+        <div class="card" style="margin-top: 50px;">
             <h3>Select Type And Anatomic Region:</h3>
             <div class="row">
                 <div class="col-md-6">
@@ -203,7 +232,7 @@
             </div>
         </div>
 
-        <div class="card mt-3">
+        <div class="card" style="margin-top: 50px;">
             <h3 class="mb-4">Upload Image</h3>
             <div class="upload-area">
                 <p style="font-weight: 400;">Choose From File or Drag And Drop</p>
