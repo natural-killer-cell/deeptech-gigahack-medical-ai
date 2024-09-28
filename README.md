@@ -17,11 +17,12 @@ To run this project, you'll need to have the following installed:
 - Matplotlib (for visualizing data)
 - NumPy (for array manipulation)
 - Flask
+- flask-cors
 
 You can install the required libraries using the following command:
 
 ```bash
-pip install tensorflow matplotlib Flask
+pip install tensorflow matplotlib Flask flask-cors
 ```
 
 ## How to Run

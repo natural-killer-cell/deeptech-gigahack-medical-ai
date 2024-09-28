@@ -4,8 +4,10 @@ from flask import Flask, request, jsonify
 from keras.preprocessing import image
 import numpy as np
 import io
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Загрузка сохранённой модели
 model = keras.models.load_model('./models/knee_model.keras')
