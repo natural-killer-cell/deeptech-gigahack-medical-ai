@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Form</title>
+    <script>
+        async function uploadFile(event) {
+            event.preventDefault(); 
+            const formData = new FormData();
+            const fileInput = document.getElementById("file");
+
+            if (fileInput.files.length === 0) {
+                alert("Please choose a file first.");
+                return;
+            }
+
+            formData.append("file", fileInput.files[0]);
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/predict", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    const message = `Prediction Results:\n\nNorma: ${result.Norma}\nPatologie: ${result.Patologie}`;
+                    alert(message);
+                } else {
+                    alert("Error: " + response.statusText);
+                }
+            } catch (error) {
+                alert("Error: " + error.message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Upload Image for Prediction</h2>
+    <form id="uploadForm" onsubmit="uploadFile(event)" enctype="multipart/form-data">
+        <label for="file">Choose image:</label>
+        <input type="file" id="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
