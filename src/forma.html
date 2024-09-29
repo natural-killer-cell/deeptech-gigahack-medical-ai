@@ -134,8 +134,7 @@
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            text-align: center;
-            width: 300px;
+            width: 500px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -306,7 +305,7 @@
         
         <!-- Popup structure -->
         <div id="popup" class="popup-overlay">
-            <div class="popup-content">
+            <div class="popup-content" style="text-align: center;">
                 <h3>Analysis Result</h3>
                 <p id="normaResult">Norma: </p>
                 <p id="patologieResult">Patologie: </p>
@@ -314,13 +313,26 @@
             </div>
         </div>
 
-         <!-- Popup question structure -->
-         <div id="popup-question" class="popup-overlay">
-            <div class="popup-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam optio ipsa ea corporis explicabo non rerum reiciendis vel voluptatibus.</p>
+        <!-- Popup question structure -->
+        <div id="popup-question" class="popup-overlay">
+            <div class="popup-content" style="width: 850px; text-align: end;">
+                <ol class="popup-columns" style="text-align: left;">
+                    <li>Well visualization of bone structures - femur condyle & tibial condyle</li>
+                    <li>Good visualization of the meniscus itself</li>
+                    <li>Supine position for ventral and lateral scans</li>
+                    <li>Prone position for dorsal scans</li>
+                    <li>Knee joint is neutral position and 30° flexion</li>
+                    <li>Maximal flexion for imaging of the intercondylar sulcus</li>
+                    <li>Dynamic examination of the suprapatellar pouch with relaxed and contracted quadriceps muscle</li>
+                    <li>Standard scans: suprapatellar longitudinal scan, suprapatellar transvers scan in neutral position, suprapatellar transvers scan in maximal flexion, infrapatellar longitudinal scan, infrapatellar transverse scan, medial longitudinal scan, lateral longitudinal scan, posterior medial longitudinal scan, posterior lateral longitudinal scan, posterior transverse scan</li>
+                    <li>Anterior: quadriceps tendon, suprapatellar pouch, patella, patellar ligament (tendon), femoral condyle cartilage, tibial tuberosity</li>
+                    <li>Medial: medial joint space, medial meniscus (partially), medial collateral ligament, pes anserinus</li>
+                    <li>Lateral: lateral joint space, iliotibial band, lateral collateral ligament, lateral meniscus, popliteal tendon</li>
+                    <li>Posterior: semimembranosus tendon, posterior horn of medial meniscus, posterior horn of lateral meniscus, popliteal pouch</li>
+                </ol>
                 <button class="close-btn" onclick="closePopupQuestion()">Close</button>
             </div>
-        </div>
+        </div>     
 
         <script>
             // Handle form submission
